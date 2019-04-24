@@ -10,7 +10,6 @@ public class Parkingslot {
 
         if (n==parked)
         {
-            System.out.println("Parking Full");
             System.out.println("Parked no of cars are " + n);
 
             return true;
@@ -20,13 +19,28 @@ public class Parkingslot {
         return false;
     }
 
-    public void addCar() {
+    public void addVehicle() {
+        System.out.println("Vehicle is being parked");
         parked++;
 
     }
 
     public void unpark()
     {
+        System.out.println("Vehicle is being unparked");
         parked--;
     }
+
+    /*public void addJeep()
+    {
+        System.out.println("Jeep is being parked");
+        parked++;
+    }
+
+    public void unparkJeep()
+    {
+        System.out.println("Unparking a jeep");
+        parked--;
+
+    }*/
 }
