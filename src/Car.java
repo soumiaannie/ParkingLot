@@ -1,32 +1,23 @@
-public class Car implements Parkable{
-    private String regnNo;
+public class Car extends Vehicle{
+    private VehicleInfo myVehicle;
+
+    Car(VehicleInfo myVehicle)
+    {
+        this.myVehicle=myVehicle;
+    }
 
     @Override
     public void park(Parkingslot plot) {
-        System.out.println("Parking a car");
-        plot.addVehicle();
-    }
 
-    @Override
-    public void unpark(Parkingslot plot) {
-        System.out.println("Unparking a car");
-        plot.unpark();
-    }
-
-
-
-    /*public void park(Parkingslot plot) {
-
-        plot.addCar();
-
-
+        if (plot.addVehicle())
+        {
+            System.out.println("Car parked successfully");
+            myVehicle.addToRegister();
+            myVehicle.displayRegister();
+        }
 
     }
 
-    public void unparkk(Parkingslot plot)
-    {
-        plot.unpark();
-    }*/
 
 
 }

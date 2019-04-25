@@ -1,46 +1,60 @@
+import java.util.ArrayList;
+
 public class Parkingslot {
-    private int n;
-    private int parked = 0;
+    private int totalSlots;
+    private int parkedSlots = 0;
 
     Parkingslot(int n)
     {
-        this.n=n;
+        this.totalSlots=n;
     }
     public boolean isFull() {
 
-        if (n==parked)
+        if (totalSlots==parkedSlots)
         {
-            System.out.println("Parked no of cars are " + n);
+            //System.out.println("Parked no of cars are " + totalSlots);
 
             return true;
 
         }
-        System.out.println("Parking not full");
+        //System.out.println("Parking not full");
         return false;
     }
 
-    public void addVehicle() {
-        System.out.println("Vehicle is being parked");
-        parked++;
+    public boolean addVehicle() {
+        if (totalSlots <= 0)
+        {
+            System.out.println("Parking is full");
+            System.out.println("====================");
+            System.exit(0);
+        }
+        if (!isFull())
+        {
+            //System.out.println("Vehicle is being parked");
+            parkedSlots++;
+            return true;
+
+        }
+        else
+            System.out.println("Parking is full");
+            System.out.println("====================");
+            return false;
+
 
     }
 
     public void unpark()
+
     {
-        System.out.println("Vehicle is being unparked");
-        parked--;
+        if (parkedSlots>0) {
+            System.out.println("Vehicle is being unparked");
+            //System.out.println("====================");
+            parkedSlots--;
+        }
+            else
+            System.out.println("Vehicle is not parked, hence cannot be unparked");
+            System.out.println("====================");
     }
 
-    /*public void addJeep()
-    {
-        System.out.println("Jeep is being parked");
-        parked++;
-    }
 
-    public void unparkJeep()
-    {
-        System.out.println("Unparking a jeep");
-        parked--;
-
-    }*/
 }

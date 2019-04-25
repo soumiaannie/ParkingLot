@@ -1,14 +1,23 @@
-public class Jeep implements Parkable {
+public class Jeep extends Vehicle  {
+    private VehicleInfo myVehicle;
+
+    Jeep(VehicleInfo myVehicle)
+    {
+        this.myVehicle=myVehicle;
+    }
+
     @Override
     public void park(Parkingslot plot) {
-        System.out.println("Parking Jeep");
-        plot.addVehicle();
+
+        if (plot.addVehicle())
+        {
+            System.out.println("Jeep parked successfully");
+            myVehicle.addToRegister();
+            myVehicle.displayRegister();
+        }
+
     }
 
-    @Override
-    public void unpark(Parkingslot plot) {
-        System.out.println("Unparking a jeep");
-        plot.unpark();
 
-    }
+
 }
