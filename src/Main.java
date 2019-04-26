@@ -2,26 +2,27 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Parkable car1 = new Car(new VehicleInfo("KA51MG6923"));
-        Parkingslot plot = new Parkingslot(10);
-        car1.park(plot);
+        Vehicle car1 = new Car(new VehicleInfo("KA51MG6923"));
+        Parkingslot parkingslot = new Parkingslot(2);
+        car1.park(parkingslot);
 
-        Parkable car2 = new Car(new VehicleInfo("KA64GH1234"));
-        car2.park(plot);
+        Vehicle car2 = new Car(new VehicleInfo("KA64GH1234"));
+        car2.park(parkingslot);
 
-        car1.unpark(plot);
-        Parkable jeep = new Jeep(new VehicleInfo(("JEEP23XY4")));
-        jeep.park(plot);
+        car1.unpark(parkingslot);
+        Vehicle jeep = new Jeep(new VehicleInfo(("JEEP23XY4")));
+        jeep.park(parkingslot);
 
 
-        plot.isFull(); //return true;
-        jeep.unpark(plot);
-        plot.isFull();
+        parkingslot.isFull(); //return true;
+        jeep.unpark(parkingslot);
+        parkingslot.isFull();
 
     }
 
-
-
-
-
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }
+

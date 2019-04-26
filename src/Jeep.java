@@ -5,15 +5,16 @@ public class Jeep extends Vehicle  {
     {
         this.myVehicle=myVehicle;
     }
-
     @Override
-    public void park(Parkingslot plot) {
+    public void park(Parkingslot parkingslot) {
 
-        if (plot.addVehicle())
+        if (parkingslot.addVehicle())
         {
             System.out.println("Jeep parked successfully");
-            myVehicle.addToRegister();
-            myVehicle.displayRegister();
+            parkingslot.addVehicleInfo(myVehicle);
+            parkingslot.displayVehicleInfo();
+            //myVehicle.addToRegister();
+            //myVehicle.displayRegister();
         }
 
     }
